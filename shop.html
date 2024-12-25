@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин - ShoeStore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.7/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+      :root {
+            --main-bg-color: #1a1a2e;
+            --accent-color: #e94560;
+            --text-color: #fff;
+            --secondary-bg-color: #f5f5f5;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--secondary-bg-color);
+            color: var(--main-bg-color);
+        }
+
+        .navbar {
+            background-color: var(--main-bg-color);
+        }
+
+        .navbar .nav-link,
+        .navbar-brand {
+            color: var(--text-color) !important;
+        }
+
+        .section-title {
+            color: var(--main-bg-color);
+            margin-bottom: 30px;
+        }
+
+        .about-section {
+            padding: 50px 0;
+        }
+
+        .about-section img {
+            max-width: 100%;
+            border-radius: 15px;
+        }
+
+        .footer {
+            background-color: var(--main-bg-color);
+            color: var(--text-color);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .footer a:hover {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">ShoeStore</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">О нас</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Магазин</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<body>
+
+            <!-- Карточка товара -->
+            <section class="container mt-5">
+                <div class="text-center mb-5">
+                    <h2>Популярные товары</h2>
+                </div>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="img/photo_2024-11-13_11-05-09 (2).jpg" class="card-img-top" alt="Кроссовки Nike">
+                            <div class="card-body">
+                                <h5 class="card-title">Кроссовки Nike</h5>
+                                <p class="card-text">Удобные и стильные кроссовки для спорта и повседневной жизни.</p>
+                                <button class="btn btn-accent add-to-cart" data-name="Кроссовки Nike" data-price="4990">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="img/photo_2024-11-13_11-12-34.jpg" class="card-img-top" alt="Зимние ботинки">
+                            <div class="card-body">
+                                <h5 class="card-title">Зимние ботинки</h5>
+                                <p class="card-text">Стильные ботинки, которые сохранят тепло в холодные дни.</p>
+                                <button class="btn btn-accent add-to-cart" data-name="Зимние ботинки" data-price="6990">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="img/photo_2024-11-13_11-05-09.jpg" class="card-img-top" alt="Элегантные туфли">
+                            <div class="card-body">
+                                <h5 class="card-title">Элегантные туфли</h5>
+                                <p class="card-text">Идеальный выбор для официальных мероприятий.</p>
+                                <button class="btn btn-accent add-to-cart" data-name="Элегантные туфли" data-price="5990">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="img/sneakers.jpg" class="card-img-top" alt="Беговые кроссовки">
+                            <div class="card-body">
+                                <h5 class="card-title">Беговые кроссовки</h5>
+                                <p class="card-text">Отличный выбор для бега и активного отдыха.</p>
+                                <button class="btn btn-accent add-to-cart" data-name="Беговые кроссовки" data-price="4590">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="img/boots.jpg" class="card-img-top" alt="Кожаные ботинки">
+                            <div class="card-body">
+                                <h5 class="card-title">Кожаные ботинки</h5>
+                                <p class="card-text">Классические ботинки из натуральной кожи.</p>
+                                <button class="btn btn-accent add-to-cart" data-name="Кожаные ботинки" data-price="7990">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="img/heels.jpg" class="card-img-top" alt="Туфли на каблуке">
+                            <div class="card-body">
+                                <h5 class="card-title">Туфли на каблуке</h5>
+                                <p class="card-text">Элегантные туфли для вечеринок и встреч.</p>
+                                <button class="btn btn-accent add-to-cart" data-name="Туфли на каблуке" data-price="6490">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="img/slippers.jpg" class="card-img-top" alt="Домашние тапочки">
+                            <div class="card-body">
+                                <h5 class="card-title">Домашние тапочки</h5>
+                                <p class="card-text">Мягкие и уютные тапочки для дома.</p>
+                                <button class="btn btn-accent add-to-cart" data-name="Домашние тапочки" data-price="1990">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="img/sandals.jpg" class="card-img-top" alt="Летние сандалии">
+                            <div class="card-body">
+                                <h5 class="card-title">Летние сандалии</h5>
+                                <p class="card-text">Легкие и удобные сандалии для жарких дней.</p>
+                                <button class="btn btn-accent add-to-cart" data-name="Летние сандалии" data-price="3990">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+</body>
+
+</html>

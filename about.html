@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас - ShoeStore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.7/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --main-bg-color: #1a1a2e;
+            --accent-color: #e94560;
+            --text-color: #fff;
+            --secondary-bg-color: #f5f5f5;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--secondary-bg-color);
+            color: var(--main-bg-color);
+        }
+
+        .navbar {
+            background-color: var(--main-bg-color);
+        }
+
+        .navbar .nav-link,
+        .navbar-brand {
+            color: var(--text-color) !important;
+        }
+
+        .section-title {
+            color: var(--main-bg-color);
+            margin-bottom: 30px;
+        }
+
+        .about-section {
+            padding: 50px 0;
+        }
+
+        .about-section img {
+            max-width: 100%;
+            border-radius: 15px;
+        }
+
+        .footer {
+            background-color: var(--main-bg-color);
+            color: var(--text-color);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .footer a:hover {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">ShoeStore</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">О нас</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Магазин</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="about-section">
+        <div class="container text-center">
+            <h1 class="section-title">О нас</h1>
+            <p class="lead">
+                Добро пожаловать в <strong>ShoeStore</strong> — магазин, который объединяет стиль, комфорт и качество.
+                Мы предлагаем широкий выбор обуви на любой вкус и бюджет.
+            </p>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <img src="https://source.unsplash.com/800x600/?team" alt="Наша команда">
+                </div>
+                <div class="col-md-6">
+                    <h3>Наша миссия</h3>
+                    <p>
+                        Наша цель — обеспечить вас обувью, которая подчеркнет вашу индивидуальность и подарит комфорт в
+                        любых обстоятельствах.
+                    </p>
+                    <h3>Почему выбирают нас?</h3>
+                    <ul>
+                        <li>Качество, проверенное временем</li>
+                        <li>Доступные цены</li>
+                        <li>Обслуживание клиентов на высшем уровне</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 ShoeStore. Все права защищены.</p>
+        <div>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

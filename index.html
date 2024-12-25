@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин обуви - Главная</title>
+    <!-- Подключение Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Иконки Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.7/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Кастомные стили -->
+    <style>
+        :root {
+            --main-bg-color: #1a1a2e;
+            --accent-color: #e94560;
+            --text-color: #fff;
+            --secondary-bg-color: #f5f5f5;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--secondary-bg-color);
+            color: var(--main-bg-color);
+        }
+
+        .navbar {
+            background-color: var(--main-bg-color);
+        }
+
+        .navbar .nav-link,
+        .navbar-brand {
+            color: var(--text-color) !important;
+        }
+
+        .cart-btn {
+            background-color: var(--accent-color);
+            color: #fff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .cart-btn:hover {
+            background-color: #d42b4d;
+            transform: scale(1.1);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #fff;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 0.8rem;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-header {
+            background-color: var(--main-bg-color);
+            color: #fff;
+        }
+
+        .modal-footer .btn {
+            background-color: var(--accent-color);
+            color: #fff;
+        }
+
+        .modal-footer .btn:hover {
+            background-color: #d42b4d;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">ShoeStore</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">О нас</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Магазин</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                    <li class="nav-item">
+                        <button class="cart-btn" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            <i class="bi bi-cart"></i>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                    <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Вход</button>
+                    </li>
+                    <li class="nav-item">
+                    <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#registerModal">Регистрация</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Главный баннер -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1>Мир Стильной Обуви</h1>
+            <p>Найдите свою идеальную пару обуви у нас</p>
+            <a href="shop.html" class="btn btn-accent btn-lg mt-4">Посмотреть коллекцию</a>
+        </div>
+    </section>
+<!-- Модальное окно для входа -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Вход</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="Введите ваш email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Пароль</label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Введите ваш пароль" required minlength="6">
+                    </div>
+                    <button type="submit" class="btn btn-accent w-100">Войти</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно для регистрации -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Регистрация</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="registerName" class="form-label">Имя</label>
+                        <input type="text" class="form-control" id="registerName" placeholder="Введите ваше имя" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="registerEmail" placeholder="Введите ваш email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerPassword" class="form-label">Пароль</label>
+                        <input type="password" class="form-control" id="registerPassword" placeholder="Введите ваш пароль" required minlength="6">
+                    </div>
+                    <button type="submit" class="btn btn-accent w-100">Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Популярные товары -->
+ 
+            <section class="container mt-5">
+                <div class="text-center mb-5">
+                    <h2>Популярные товары</h2>
+                </div>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="img/photo_2024-11-13_11-05-09 (2).jpg" class="card-img-top" alt="Кроссовки Nike">
+                            <div class="card-body">
+                                <h5 class="card-title">Кроссовки Nike</h5>
+                                <p class="card-text">Удобные и стильные кроссовки для спорта и повседневной жизни.</p>
+                                <button class="btn btn-accent add-to-cart" data-name="Кроссовки Nike" data-price="4990">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="img/photo_2024-11-13_11-12-34.jpg" class="card-img-top" alt="Зимние ботинки">
+                            <div class="card-body">
+                                <h5 class="card-title">Зимние ботинки</h5>
+                                <p class="card-text">Стильные ботинки, которые сохранят тепло в холодные дни.</p>
+                                <button class="btn btn-accent add-to-cart" data-name="Зимние ботинки" data-price="6990">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="img/photo_2024-11-13_11-05-09.jpg" class="card-img-top" alt="Элегантные туфли">
+                            <div class="card-body">
+                                <h5 class="card-title">Элегантные туфли</h5>
+                                <p class="card-text">Идеальный выбор для официальных мероприятий.</p>
+                                <button class="btn btn-accent add-to-cart" data-name="Элегантные туфли" data-price="5990">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="img/9.jpg" class="card-img-top" alt="Беговые кроссовки">
+                            <div class="card-body">
+                                <h5 class="card-title">Беговые кроссовки</h5>
+                                <p class="card-text">Отличный выбор для бега и активного отдыха.</p>
+                                <button class="btn btn-accent add-to-cart" data-name="Беговые кроссовки" data-price="4590">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="img/boots.jpg" class="card-img-top" alt="Кожаные ботинки">
+                            <div class="card-body">
+                                <h5 class="card-title">Кожаные ботинки</h5>
+                                <p class="card-text">Классические ботинки из натуральной кожи.</p>
+                                <button class="btn btn-accent add-to-cart" data-name="Кожаные ботинки" data-price="7990">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="img/heels.jpg" class="card-img-top" alt="Туфли на каблуке">
+                            <div class="card-body">
+                                <h5 class="card-title">Туфли на каблуке</h5>
+                                <p class="card-text">Элегантные туфли для вечеринок и встреч.</p>
+                                <button class="btn btn-accent add-to-cart" data-name="Туфли на каблуке" data-price="6490">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="img/slippers.jpg" class="card-img-top" alt="Домашние тапочки">
+                            <div class="card-body">
+                                <h5 class="card-title">Домашние тапочки</h5>
+                                <p class="card-text">Мягкие и уютные тапочки для дома.</p>
+                                <button class="btn btn-accent add-to-cart" data-name="Домашние тапочки" data-price="1990">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="img/sandals.jpg" class="card-img-top" alt="Летние сандалии">
+                            <div class="card-body">
+                                <h5 class="card-title">Летние сандалии</h5>
+                                <p class="card-text">Легкие и удобные сандалии для жарких дней.</p>
+                                <button class="btn btn-accent add-to-cart" data-name="Летние сандалии" data-price="3990">Добавить в корзину</button>
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальное окно корзины -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Корзина</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group" id="cartItems">
+                        <li class="list-group-item text-center">Ваша корзина пуста</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button class="btn" id="checkoutBtn">Оформить заказ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer class="footer mt-5">
+        <div class="container text-center">
+            <p>&copy; 2024 ShoeStore. Все права защищены.</p>
+            <div>
+                <a href="#" class="me-3"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="me-3"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Подключение Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const cartCount = document.getElementById('cartCount');
+        const cartItems = document.getElementById('cartItems');
+        let cart = [];
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const itemName = button.getAttribute('data-name');
+                const itemPrice = button.getAttribute('data-price');
+                cart.push({ name: itemName, price: itemPrice });
+                updateCart();
+            });
+        });
+
+        function updateCart() {
+            cartCount.textContent = cart.length;
+            cartItems.innerHTML = cart.length > 0
+                ? cart.map(item => `<li class="list-group-item">${item.name} - ${item.price} руб.</li>`).join('')
+                : '<li class="list-group-item text-center">Ваша корзина пуста</li>';
+        }
+    </script>
+</body>
+
+</html>
